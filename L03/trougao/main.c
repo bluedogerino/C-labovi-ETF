@@ -14,12 +14,9 @@ int main()
     s=((a+b+c)/2);
     povrsina=(pow(((s*(s-a)*(s-b)*(s-c))),0.5));
     obim=(a+b+c);
-    if ((a+b)>c)
+    if ((a+b)>c && ((b+c)>a) && ((a+c)>b))
     {
-        if ((b+c)>a)
-        {
-            if((a+c)>b)
-            {
+
                 if(a==b && b==c && c==a)
                 {
                     printf("Jednakostranicni trougao\n");
@@ -40,7 +37,7 @@ int main()
                         printf("Obim : %.2f", obim);
                     }
                 }
-                else if(a!=b!=c)
+                else if(a!=b && b!=c)
                 {
                     printf("Raznostranicni trougao\n");
                     if((a*a==b*b+c*c)||(b*b==a*a+c*c)||(c*c==a*a+b*b))
@@ -50,19 +47,11 @@ int main()
                         printf("Obim : %.2f \n", obim);
                     }
                 }
-
-
-            }
-
-                else
-                {
-                    printf("Trougao se ne moze konstruisati.\n");
-                }
-        }
+    }
         else
             {
                 printf("Trougao se ne moze konstruisati.\n");
             }
-    }
+
     return 0;
 }
